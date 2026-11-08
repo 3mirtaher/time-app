@@ -1,0 +1,157 @@
+*{
+    box-sizing: border-box;
+}
+html{
+    text-align: center;
+}
+body{
+    background-color: #D7D7D7;
+    min-height: 100vh;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+
+ .clock-face{
+    margin-top: 100px;
+
+    margin-bottom: -100px;
+    position: relative; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 200px;
+    height: 200px;
+    background-color: transparent;
+    border: 5px solid whitesmoke;
+    border-radius: 50%;
+    box-shadow: 0 0 20px  rgba(0, 0, 0, 0.46);
+}
+.hand{
+    width: 50%;
+    background-color: black;
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform-origin: 100%;
+    transform: rotate(90deg);
+    transition: all .05s;
+    transition-timing-function: cubic-bezier(0, 3.23, 0.58, 1); 
+}
+.hand.hour-hand{
+    height: 6px;
+    position: absolute;
+    width: 45%;
+    
+}
+.hand.min-hand{
+    height: 4px;
+    position: absolute;
+    width: 45%;
+}
+.hand.second-hand{
+    height: 2px;
+    position: absolute;
+    width: 45%;
+    top: 51%;
+}
+.center{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+.clock-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 420px;
+    height: 270px;
+    background-color: #111827;
+    border-radius: 5px;
+}
+.clock-box p{
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+.timer{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: #1F2937;
+    padding: 10px 15px;
+    border-radius: 5px;
+    width:90%;
+    margin: 0 auto;
+    position: relative;
+
+    
+}
+.timer div{
+    
+    font-size: 60px;
+    font-weight: 800;
+    color: #34D399;
+
+     width: 7.5ch;
+    white-space: nowrap;
+    overflow: hidden;
+
+}
+.timer span{
+    position: absolute;
+    color: #9CA3AF;
+    display: block;
+    right: 12px;
+    top: 39px;
+    font-size: 20px;  
+}
+.date{
+    margin-top: 10px;
+    color: #9CA3AF;
+    font-size: 15px;
+}
+.convert-time{
+    border: 2px solid #34D399;
+    border-radius: 5px;
+    color: #34D399;
+    background-color: transparent;
+    width: fit-content;
+    padding: 10px 40px ;
+    margin: 20px auto ;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: color .3s;
+    font-size: 20px;
+    font-weight: bold;
+    z-index: 0;
+}
+.convert-time::after{
+    content: "";
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    background-color: #34D399;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+    transition: .3s;
+    z-index: -1;
+}
+
+.convert-time:hover::after{
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+
+}   
+.convert-time:hover{
+    color: #E5E7EB;
+}
